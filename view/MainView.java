@@ -2,7 +2,7 @@ package view;
 
 public class MainView {
     public static void main(String[] args) {
-        FuramaView furamaView=new FuramaView();
-        furamaView.displayMainMenu();
+        FuramaMainView furamaView=new FuramaMainView();
+        furamaView.displayMainViewFurama();
     }
 }

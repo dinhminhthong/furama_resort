@@ -2,6 +2,8 @@ package view;
 
 import controller.CustomerController;
 import controller.EmployeeController;
+import controller.FacilityController;
+import models.Facility.Villa;
 import models.person.Customer;
 import models.person.Employee;
 import service.extend.ICustomerService;
@@ -13,6 +15,8 @@ import java.util.Scanner;
 public class FuramaView {
     private final EmployeeController employeeController = new EmployeeController();
     private final CustomerController customerController =new CustomerController();
+
+    private final FacilityController facilityController = new FacilityController();
      private final Scanner sc = new Scanner(System.in);
 
 
@@ -74,7 +78,8 @@ public class FuramaView {
                                 System.out.println("enter wage of employee");
                                 int wage = Integer.parseInt(sc.nextLine());
                                Employee employee = new Employee(nameEmployee, genderEmployee, cnmd, ageEmployee,
-                                        telephonenumberEmplpyee, email, addressEmployee, idEmployee, levelEmployee, positionEmployee
+                                        telephonenumberEmplpyee, email, addressEmployee,
+                                       idEmployee, levelEmployee, positionEmployee
                                         , wage);
                                 employeeController.add(employee);
                                 break;
@@ -153,16 +158,48 @@ public class FuramaView {
                 case 3:
                     //TODO Facility Management
                        do{
-                           System.out.println("Display list facility");
-                           System.out.println("Add new facility");
-                           System.out.println("Display list facility maintenance");
-                           System.out.println("Return main menu");
+                           System.out.println("Add new villa");
+                           System.out.println("Add new Room");
+                           System.out.println("Back to menu");
                            int inputFacility = Integer.parseInt(sc.nextLine());
                            switch (inputFacility){
                                case 1:
+                                   System.out.println("1.enter id of villa");
+                                   String idVill = sc.nextLine();
+                                   System.out.println("2.enter name of villa");
+                                   String nameVill = sc.nextLine();
+                                   System.out.println("3. enter age of villa");
+                                   int ageVill = Integer.parseInt(sc.nextLine());
+                                   System.out.println("4. enter cost of villa");
+                                   int costVill = Integer.parseInt(sc.nextLine());
+                                   System.out.println("5.enter peopler of villa");
+                                   int peopleVill = Integer.parseInt(sc.nextLine());
+                                   System.out.println("6. enter rental of villa");
+                                   String rentalVill = sc.nextLine();
+                                   System.out.println("7. enter standard of villa");
+                                   String standardVill = sc.nextLine();
+                                   System.out.println("8. enter agePool of villa");
+                                   int agePoolVill = Integer.parseInt(sc.nextLine());
+                                   Villa villa = new Villa(idVill,nameVill,ageVill,costVill
+                                   ,peopleVill,rentalVill,standardVill,agePoolVill);
+                                   this.facilityController.addVilla(villa);
+                                   break;
+                               case 2:
+                                   // todo room
+                               case 3:
+                                   // back to menu
+                                   this.displayMainMenu();
+                               default:
+                                   System.out.println("Inalid");
+
+
+//                                   String idFacility, String nameService, int age, int costs,
+//                                   int people, String rental, String standard, int agePool
+
                            }
 
                        }while (true);
+
                 case 4:
                     //TODO Booking Management
                 case 5:

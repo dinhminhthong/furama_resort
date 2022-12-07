@@ -46,13 +46,15 @@ public class CustomerServiceImpl implements ICustomerService {
     public void delete(Customer customer) {
         Customer deleteCustomer = null;
         for (Customer customer1: listCustomer) {
-            if (customer1.getIdClient()==customer.getIdClient());
-            deleteCustomer= customer1;
-            break;
+            if (customer1.getIdClient()==customer.getIdClient()) {
 
+
+                deleteCustomer = customer1;
+                break;
+            }
 
         }
-
+          listCustomer.remove(deleteCustomer);
     }
 
 

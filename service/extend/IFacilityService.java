@@ -5,7 +5,12 @@ import models.Facility.Room;
 import models.Facility.Villa;
 import service.IService;
 
-public interface IFacilityService extends IService<Villa> {
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public interface IFacilityService extends IService<Facility> {
+
+    Map<Facility, Integer> getFacilityList();
     void addVilla(Villa villa);
 
     void addRoom(Room room);
