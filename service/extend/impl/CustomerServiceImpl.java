@@ -16,10 +16,6 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public List<Customer> getList() {
-        for (Customer customer : listCustomer) {
-            System.out.println(customer);
-
-        }
         return listCustomer;
     }
 
@@ -32,10 +28,17 @@ public class CustomerServiceImpl implements ICustomerService {
     public void edit(Customer customer) {
         for (Customer customer1 : listCustomer) {
             if (customer1.getIdClient() == customer.getIdClient()) {
-                customer1.setAge(customer.getAge());
                 customer1.setName(customer.getName());
+                customer1.setGender(customer.getGender());
+                customer1.setCMND(customer.getCMND());
+                customer1.setAge(customer.getAge());
+                customer1.setTelephonenumber(customer.getTelephonenumber());
+                customer1.setEmail(customer.getEmail());
                 customer1.setAddress(customer.getAddress());
-
+                customer1.setIdClient(customer.getIdClient());
+                customer1.setTypeClient(customer.getTypeClient());
+//                (String name, String gender, int CMND,
+//                String age, String telephonenumber, String email, String address, int idClient, String typeClient
             }
         }
 

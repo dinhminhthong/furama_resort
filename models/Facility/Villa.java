@@ -29,8 +29,8 @@ public class Villa extends Facility{
 
     @Override
     public String toString() {
-        return "Villa{" +
-                "standard='" + standard + '\'' +
+        return super.toString()+
+                ", standard='" + standard + '\'' +
                 ", agePool=" + agePool +
                 '}';
     }

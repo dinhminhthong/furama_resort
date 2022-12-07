@@ -17,9 +17,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public List<Employee> getList() {
-        for (Employee employee : listEmployee) {
-            System.out.println(employee);
-        }
+
         return listEmployee;
     }
 
