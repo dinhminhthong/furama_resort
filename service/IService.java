@@ -1,15 +1,18 @@
 package service;
 
+
+import models.person.Customer;
+
 import java.util.List;
 
-public interface IService<Object> {
+public interface IService<O> {
 
-    void getList();
+    List<O> getList();
 
-    void add(Object object);
+    void add(O object);
 
-    void edit(Object object);
+    void edit(O object);
 
-    void delete(int id);
+    void delete(O object);
 
 }

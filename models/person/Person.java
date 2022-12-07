@@ -1,15 +1,16 @@
 package models.person;
 
-abstract class Person {
+public abstract class Person {
     private String name;
     private String gender;
     private int CMND;
-    private int age;
+    private String age;
     private String telephonenumber;
     private String email;
     private String address;
 
-    public Person(String name, String gender, int CMND, int age, String telephonenumber, String email, String address) {
+    protected Person() {}
+    protected Person(String name, String gender, int CMND, String age, String telephonenumber, String email, String address) {
         this.name = name;
         this.gender = gender;
         this.CMND = CMND;
@@ -43,11 +44,11 @@ abstract class Person {
         this.CMND = CMND;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

@@ -1,12 +1,13 @@
 package service.extend.impl;
 
 import models.person.Customer;
+import service.extend.ICustomerService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerServiceImpl implements ICustomerService {
-    List<Customer> list = new ArrayList<>();
+
     private static final List<Customer> listCustomer;
 
     static {
@@ -14,12 +15,12 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public void getList() {
+    public List<Customer> getList() {
         for (Customer customer : listCustomer) {
             System.out.println(customer);
 
-
         }
+        return listCustomer;
     }
 
     @Override
@@ -42,11 +43,17 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public void delete(int id) {
-for (int i=0; i< list.size();i++){
-    if(id==list.get(i).getIdClient()){
-        list.remove(list.get(i));
+    public void delete(Customer customer) {
+        Customer deleteCustomer = null;
+        for (Customer customer1: listCustomer) {
+            if (customer1.getIdClient()==customer.getIdClient());
+            deleteCustomer= customer1;
+            break;
+
+
+        }
+
     }
-}
-    }
+
+
 }

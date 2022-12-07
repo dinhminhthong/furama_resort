@@ -3,9 +3,12 @@ package models.person;
 public class Customer extends Person{
     private int idClient;
     private String typeClient;
+    public Customer(){
+
+    }
 
     public Customer(String name, String gender, int CMND,
-                    int age, String telephonenumber, String email, String address, int idClient, String typeClient) {
+                    String age, String telephonenumber, String email, String address, int idClient, String typeClient) {
         super(name, gender, CMND, age, telephonenumber, email, address);
         this.idClient = idClient;
         this.typeClient = typeClient;

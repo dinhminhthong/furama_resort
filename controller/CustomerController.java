@@ -3,10 +3,13 @@ package controller;
 import models.person.Customer;
 import service.extend.impl.CustomerServiceImpl;
 
+import java.util.List;
+
 public class CustomerController {
     CustomerServiceImpl customerService = new CustomerServiceImpl();
-    public void getList() {
-        customerService.getList();
+    public List<Customer> getList() {
+       return customerService.getList();
+
     }
     public void add(Customer customer) {
         customerService.add(customer);
@@ -14,7 +17,7 @@ public class CustomerController {
     public void edit(Customer customer){
         customerService.edit(customer);
     }
-    public void delete(int id) {
-        customerService.delete(id);
+    public void delete(Customer customer) {
+        customerService.delete(customer);
     }
 }

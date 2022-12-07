@@ -1,4 +1,4 @@
-package service.extend.impl;
+package service.extend;
 
 import models.person.Customer;
 import service.IService;

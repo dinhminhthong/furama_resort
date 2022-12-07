@@ -1,12 +1,16 @@
 package controller;
 
 import models.person.Employee;
+import service.extend.IEmployeeService;
 import service.extend.impl.EmployeeServiceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmployeeController {
-    EmployeeServiceImpl employeeService =new EmployeeServiceImpl();
-    public void delete(int id) {
-        employeeService.delete(id);
+    IEmployeeService employeeService =new EmployeeServiceImpl();
+    public void delete(Employee employee) {
+        employeeService.delete(employee);
     }
     public void edit(Employee employee) {
         employeeService.edit(employee);
@@ -14,7 +18,8 @@ public class EmployeeController {
     public void add(Employee employee) {
         employeeService.add(employee);
     }
-    public void getList() {
-        employeeService.getList();
+    public List<Employee> getList() {
+        return employeeService.getList();
+
     }
 }

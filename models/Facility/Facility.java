@@ -1,31 +1,31 @@
 package models.Facility;
 
-abstract class Facility {
-    private String idFacility;
+public abstract class Facility {
+    private String id;
     private String nameService;
     private int age;
     private int costs;
     private int people;
     private String rental;
 
-    public Facility(String idFacility, String nameService, int age, int costs, int people, String rental) {
-        this.idFacility = idFacility;
+    protected Facility(String idFacility, String nameService, int age, int costs, int people, String rental) {
+        this.id = id;
         this.nameService = nameService;
         this.age = age;
         this.costs = costs;
         this.people = people;
         this.rental = rental;
     }
-    private Facility(){
+    protected Facility(){
 
     }
 
-    public String getIdFacility() {
-        return idFacility;
+    public String getId() {
+        return id;
     }
 
-    public void setIdFacility(String idFacility) {
-        this.idFacility = idFacility;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNameService() {
@@ -71,7 +71,7 @@ abstract class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "idFacility='" + idFacility + '\'' +
+                "idFacility='" + id + '\'' +
                 ", nameService='" + nameService + '\'' +
                 ", age=" + age +
                 ", costs=" + costs +
